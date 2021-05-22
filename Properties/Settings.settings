@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NDM_SoftwareV5.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EMPRESA_DESCRICAO" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EMPRESA_ID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="EMPRESA_OBS" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="login_app" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NDM</Value>
+    </Setting>
+    <Setting Name="senha_app" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ndm</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

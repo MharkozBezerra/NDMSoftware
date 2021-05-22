@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBA268EC-BEA2-4349-8E7F-BA0D89BDFF7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDM_SoftwareV5</RootNamespace>
+    <AssemblyName>NDM_SoftwareV5</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NDM_SoftwareV5.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fox_sistem.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebKitBrowser, Version=0.5.0.0, Culture=neutral, PublicKeyToken=b967213f6d29a3be, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebKit.NET-0.5-bin-cairo\WebKit.NET-0.5-bin-cairo\bin\WebKitBrowser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\frm_add_empresa_filial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\frm_add_empresa_filial.Designer.cs">
+      <DependentUpon>frm_add_empresa_filial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador\frm_empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador\frm_empresa.Designer.cs">
+      <DependentUpon>frm_empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\add_Telefone_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\add_Telefone_cliente.Designer.cs">
+      <DependentUpon>add_Telefone_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_add_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_add_cliente.Designer.cs">
+      <DependentUpon>frm_add_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Config_Sistemas\frm_configuracao_sistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Config_Sistemas\frm_configuracao_sistema.Designer.cs">
+      <DependentUpon>frm_configuracao_sistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_forncedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_forncedor.Designer.cs">
+      <DependentUpon>frm_forncedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_pesquisa_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\F_Cliente\frm_pesquisa_cliente.Designer.cs">
+      <DependentUpon>frm_pesquisa_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\OrdemServico\frm_abertura_OS_Atendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\OrdemServico\frm_abertura_OS_Atendimento.Designer.cs">
+      <DependentUpon>frm_abertura_OS_Atendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\OrdemServico\frm_fechar_agendamento_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\OrdemServico\frm_fechar_agendamento_OS.Designer.cs">
+      <DependentUpon>frm_fechar_agendamento_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Relatorios\Atendimento\frm_relatorios_diversos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Relatorios\Atendimento\frm_relatorios_diversos.Designer.cs">
+      <DependentUpon>frm_relatorios_diversos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Relatorios\Estoque\frm_reltatorio_estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Relatorios\Estoque\frm_reltatorio_estoque.Designer.cs">
+      <DependentUpon>frm_reltatorio_estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Categoria.Designer.cs">
+      <DependentUpon>frm_add_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco.Designer.cs">
+      <DependentUpon>frm_add_endereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_produto.Designer.cs">
+      <DependentUpon>frm_add_produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_roteador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_roteador.Designer.cs">
+      <DependentUpon>frm_add_roteador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Subcategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Subcategoria.Designer.cs">
+      <DependentUpon>frm_add_Subcategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_alocar_produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_alocar_produtos.Designer.cs">
+      <DependentUpon>frm_alocar_produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_entrada_saida_produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_entrada_saida_produto.Designer.cs">
+      <DependentUpon>frm_entrada_saida_produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_lista_produto_estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_lista_produto_estoque.Designer.cs">
+      <DependentUpon>frm_lista_produto_estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_posicao_estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_posicao_estoque.Designer.cs">
+      <DependentUpon>frm_posicao_estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_Roteador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\frm_Roteador.Designer.cs">
+      <DependentUpon>frm_Roteador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\MDI_estoque_Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Estoque\MDI_estoque_Index.Designer.cs">
+      <DependentUpon>MDI_estoque_Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco_bairro_rua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco_bairro_rua.Designer.cs">
+      <DependentUpon>frm_add_endereco_bairro_rua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_MDIParent_ADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_MDIParent_ADM.Designer.cs">
+      <DependentUpon>frm_MDIParent_ADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_mostra_GoogleMaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Gerente\frm_mostra_GoogleMaps.Designer.cs">
+      <DependentUpon>frm_mostra_GoogleMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_add_Atendimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_add_Atendimento.Designer.cs">
+      <DependentUpon>frm_add_Atendimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_buscar_tecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_buscar_tecnico.Designer.cs">
+      <DependentUpon>frm_buscar_tecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_encaminhar_atendimento_help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_encaminhar_atendimento_help.Designer.cs">
+      <DependentUpon>frm_encaminhar_atendimento_help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk.Designer.cs">
+      <DependentUpon>frm_HelpDesk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk_historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk_historico.Designer.cs">
+      <DependentUpon>frm_HelpDesk_historico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_inf_atendimento_solicitado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_HelpDesk\frm_inf_atendimento_solicitado.Designer.cs">
+      <DependentUpon>frm_inf_atendimento_solicitado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Recepcao\frm_index_solicitacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\Usuario_Recepcao\frm_index_solicitacao.Designer.cs">
+      <DependentUpon>frm_index_solicitacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\I_Base.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\frm_add_empresa_filial.resx">
+      <DependentUpon>frm_add_empresa_filial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador\frm_empresa.resx">
+      <DependentUpon>frm_empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\F_Cliente\add_Telefone_cliente.resx">
+      <DependentUpon>add_Telefone_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\F_Cliente\frm_add_cliente.resx">
+      <DependentUpon>frm_add_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Config_Sistemas\frm_configuracao_sistema.resx">
+      <DependentUpon>frm_configuracao_sistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\F_Cliente\frm_forncedor.resx">
+      <DependentUpon>frm_forncedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\F_Cliente\frm_pesquisa_cliente.resx">
+      <DependentUpon>frm_pesquisa_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\OrdemServico\frm_abertura_OS_Atendimento.resx">
+      <DependentUpon>frm_abertura_OS_Atendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\OrdemServico\frm_fechar_agendamento_OS.resx">
+      <DependentUpon>frm_fechar_agendamento_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Relatorios\Atendimento\frm_relatorios_diversos.resx">
+      <DependentUpon>frm_relatorios_diversos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Relatorios\Estoque\frm_reltatorio_estoque.resx">
+      <DependentUpon>frm_reltatorio_estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_entrada.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_roteador_aguardando.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_roteador_alugado.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_roteador_disponivel.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_roteador.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_saida.rdlc" />
+    <EmbeddedResource Include="Formularios\Relatorios\Reports\RPT_Controle_estoque_entrada_saida.rdlc" />
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Categoria.resx">
+      <DependentUpon>frm_add_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco.resx">
+      <DependentUpon>frm_add_endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_add_produto.resx">
+      <DependentUpon>frm_add_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_add_roteador.resx">
+      <DependentUpon>frm_add_roteador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_add_Subcategoria.resx">
+      <DependentUpon>frm_add_Subcategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_alocar_produtos.resx">
+      <DependentUpon>frm_alocar_produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_entrada_saida_produto.resx">
+      <DependentUpon>frm_entrada_saida_produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_lista_produto_estoque.resx">
+      <DependentUpon>frm_lista_produto_estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_posicao_estoque.resx">
+      <DependentUpon>frm_posicao_estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\frm_Roteador.resx">
+      <DependentUpon>frm_Roteador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Estoque\MDI_estoque_Index.resx">
+      <DependentUpon>MDI_estoque_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Gerente\frm_add_endereco_bairro_rua.resx">
+      <DependentUpon>frm_add_endereco_bairro_rua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Gerente\frm_MDIParent_ADM.resx">
+      <DependentUpon>frm_MDIParent_ADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Gerente\frm_mostra_GoogleMaps.resx">
+      <DependentUpon>frm_mostra_GoogleMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_add_Atendimento.resx">
+      <DependentUpon>frm_add_Atendimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_buscar_tecnico.resx">
+      <DependentUpon>frm_buscar_tecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_encaminhar_atendimento_help.resx">
+      <DependentUpon>frm_encaminhar_atendimento_help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk.resx">
+      <DependentUpon>frm_HelpDesk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_HelpDesk_historico.resx">
+      <DependentUpon>frm_HelpDesk_historico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_HelpDesk\frm_inf_atendimento_solicitado.resx">
+      <DependentUpon>frm_inf_atendimento_solicitado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\Usuario_Recepcao\frm_index_solicitacao.resx">
+      <DependentUpon>frm_index_solicitacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\ControleWebKit\WebKitBrowser.dll.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Estoque.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Estoque_entrada.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Estoque_saida.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Filial.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Fornecedor.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Roteador.datasource" />
+    <None Include="Properties\DataSources\Modelo.Classes_Relatorio.RLT_Usuario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\Usuarios\Usuario_Tecnico\" />
+    <Folder Include="Formularios\Usuarios\Usuario_Vendedor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ControleWebKit\CFLite.dll" />
+    <None Include="bin\Debug\ControleWebKit\icudt40.dll" />
+    <None Include="bin\Debug\ControleWebKit\icuin40.dll" />
+    <None Include="bin\Debug\ControleWebKit\icuuc40.dll" />
+    <None Include="bin\Debug\ControleWebKit\JavaScriptCore.dll" />
+    <None Include="bin\Debug\ControleWebKit\libcurl.dll" />
+    <None Include="bin\Debug\ControleWebKit\libeay32.dll" />
+    <None Include="bin\Debug\ControleWebKit\libexslt.dll" />
+    <None Include="bin\Debug\ControleWebKit\libxml2.dll" />
+    <None Include="bin\Debug\ControleWebKit\libxslt.dll" />
+    <None Include="bin\Debug\ControleWebKit\objc.dll" />
+    <None Include="bin\Debug\ControleWebKit\pthreadVC2.dll" />
+    <None Include="bin\Debug\ControleWebKit\SQLite3.dll" />
+    <None Include="bin\Debug\ControleWebKit\ssleay32.dll" />
+    <None Include="bin\Debug\ControleWebKit\WebKit.dll" />
+    <None Include="bin\Debug\ControleWebKit\WebKit.Interop.dll" />
+    <None Include="bin\Debug\ControleWebKit\WebKitBrowser.dll" />
+    <Content Include="fox_sistem.ico" />
+    <Content Include="Imagens\Interno\Acoes\alterar.ico" />
+    <Content Include="Imagens\Interno\Acoes\amarelo_25x25.png" />
+    <Content Include="Imagens\Interno\Acoes\bt_atualizar_25x25.png" />
+    <Content Include="Imagens\Interno\Acoes\bt_salvar_30x30.png" />
+    <Content Include="Imagens\Interno\Acoes\cancelar.ico" />
+    <Content Include="Imagens\Interno\Acoes\excluir.ico" />
+    <Content Include="Imagens\Interno\Acoes\gravar.ico" />
+    <Content Include="Imagens\Interno\Acoes\img_down.png" />
+    <Content Include="Imagens\Interno\Acoes\img_up.png" />
+    <Content Include="Imagens\Interno\Acoes\incluir.ico" />
+    <Content Include="Imagens\Interno\Acoes\verde_25x25.png" />
+    <Content Include="Imagens\Interno\Acoes\vermelho_25x25.png" />
+    <Content Include="Imagens\Interno\Botoes\atendimento_homem_com_cor.png" />
+    <Content Include="Imagens\Interno\Botoes\atendimento_homem_sem_cor.png" />
+    <Content Include="Imagens\Interno\Botoes\atendimento_mulher_com_cor.png" />
+    <Content Include="Imagens\Interno\Botoes\atendimento_mulher_sem_cor.png" />
+    <Content Include="Imagens\Interno\Botoes\Cliente_Cor.png" />
+    <Content Include="Imagens\Interno\Botoes\Cliente_SCor.png" />
+    <Content Include="Imagens\Interno\Botoes\HelpDesk_Cor.png" />
+    <Content Include="Imagens\Interno\Botoes\HelpDesk_SCor.png" />
+    <Content Include="Imagens\Interno\Botoes\Passar_Atendimento_Cor.png" />
+    <Content Include="Imagens\Interno\Botoes\Passar_Atendimento_SCor.png" />
+    <Content Include="Imagens\Interno\Botoes\reparar%281%29.png" />
+    <Content Include="Imagens\Interno\Botoes\reparar.png" />
+    <Content Include="Imagens\Interno\Botoes\SolicitarAtendimento_Cor.png" />
+    <Content Include="Imagens\Interno\Botoes\SolicitarAtendimento_SCor.png" />
+    <Content Include="Imagens\Interno\Login\Raposa.jpg" />
+    <Content Include="Imagens\Interno\Login\usuario_Comun.png" />
+    <None Include="Resources\acesso_adm_fundo_1.png" />
+    <None Include="Resources\acesso_adm_fundo_2.png" />
+    <None Include="Resources\acesso_adm_fundo_21.png" />
+    <Content Include="Resources\atendimento_25x25.png" />
+    <Content Include="Resources\chave.png" />
+    <Content Include="Resources\chave_adm.png" />
+    <Content Include="Resources\cliente_25x25.png" />
+    <Content Include="Resources\config_25x25.png" />
+    <None Include="Resources\Desert.jpg" />
+    <None Include="Resources\fundo_3.jpg" />
+    <None Include="Resources\fundo_5.jpg" />
+    <None Include="Resources\fundo_6.jpg" />
+    <None Include="Resources\fundo_7.jpg" />
+    <None Include="Resources\fundo_8.jpg" />
+    <None Include="Resources\fundo_estoque_1.png" />
+    <Content Include="Resources\help_25x25.png" />
+    <Content Include="Resources\os_25x25.png" />
+    <None Include="Resources\provedor_25x25.png" />
+    <Content Include="Resources\recepcao_25x25.png" />
+    <Content Include="Resources\relatorio_25x25.png" />
+    <Content Include="Resources\tecnico_rua_25x25.png" />
+    <Content Include="Resources\user_25x25.png" />
+    <None Include="Resources\icone_alocar_produto_cor.png" />
+    <None Include="Resources\icone_alocar_produto.png" />
+    <None Include="Resources\Saida_produtos.png" />
+    <None Include="Resources\Entrada_produto.png" />
+    <None Include="Resources\img_up1.png" />
+    <None Include="Resources\img_down1.png" />
+    <None Include="Resources\saida_roteador.png" />
+    <None Include="Resources\entrada_roteador.png" />
+    <None Include="Resources\roteador.png" />
+    <None Include="Resources\icons8-telefone-100.png" />
+    <None Include="Resources\lupa_25x25.png" />
+    <None Include="Resources\SolicitarAtendimento_SCor.png" />
+    <None Include="Resources\SolicitarAtendimento_Cor.png" />
+    <None Include="Resources\reparar.png" />
+    <None Include="Resources\reparar%281%29.png" />
+    <None Include="Resources\Passar_Atendimento_SCor.png" />
+    <None Include="Resources\Passar_Atendimento_Cor.png" />
+    <None Include="Resources\HelpDesk_SCor.png" />
+    <None Include="Resources\HelpDesk_Cor.png" />
+    <None Include="Resources\Cliente_SCor.png" />
+    <None Include="Resources\Cliente_Cor.png" />
+    <None Include="Resources\atendimento_mulher_sem_cor.png" />
+    <None Include="Resources\atendimento_mulher_com_cor.png" />
+    <None Include="Resources\atendimento_homem_sem_cor.png" />
+    <None Include="Resources\atendimento_homem_com_cor.png" />
+    <None Include="Resources\Raposa.jpg" />
+    <None Include="Resources\usuario_Comun.png" />
+    <None Include="Resources\vermelho_25x25.png" />
+    <None Include="Resources\verde_25x25.png" />
+    <None Include="Resources\incluir.ico" />
+    <None Include="Resources\img_up.png" />
+    <None Include="Resources\img_down.png" />
+    <None Include="Resources\gravar.ico" />
+    <None Include="Resources\excluir.ico" />
+    <None Include="Resources\cancelar.ico" />
+    <None Include="Resources\bt_salvar_30x30.png" />
+    <None Include="Resources\bt_atualizar_25x25.png" />
+    <None Include="Resources\amarelo_25x25.png" />
+    <None Include="Resources\alterar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controlador\Controlador.csproj">
+      <Project>{4c6e8f26-baea-4d75-9992-8d1f805d7a6b}</Project>
+      <Name>Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{b98b1f0b-fdfe-4f7d-8ffe-e0c569b3725e}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Regras_N\Regras_N.csproj">
+      <Project>{40ffd73d-7838-4dd5-85c7-62b61a979f63}</Project>
+      <Name>Regras_N</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net451\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
