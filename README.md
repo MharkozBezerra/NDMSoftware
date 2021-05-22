@@ -1,5 +1,6 @@
 # NDMSoftware
 Projeto criado para em C#
+-Visual Studio 2015, C# 6.3
 -Projeto finalizado e  entregue ao cliente.
 
 -Não terá mais atualização, migrado todo para java,
